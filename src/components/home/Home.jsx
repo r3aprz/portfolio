@@ -10,7 +10,7 @@ const Home = () => {
         <div className="home__container container grid">
             <div className="home__content grid">
                 <Social></Social>
-                <div className="home__img"></div>
+                <div className="home__img" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" ></div>
                 <Data></Data>
             </div>
 

@@ -178,7 +178,12 @@
     }
 
     .home__scroll {
-        display: none;
+        /* display: none; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: -5rem auto 0 auto;
+        width: 100%;
     }
 }
 

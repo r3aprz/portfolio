@@ -2,7 +2,7 @@ import React from 'react'
 
 const Social = () => {
   return (
-    <div className="home__social">
+    <div className="home__social" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200" >
         <a 
           href="https://www.linkedin.com/in/francesco-de-micco-b55034210/" 
           className="home__social-icon" target='_blank'>

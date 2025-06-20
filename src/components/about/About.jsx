@@ -8,13 +8,15 @@ import Fileicon from './icons/Fileicon.jsx'
 const About = () => {
   return (
     <section className="about section" id="about">
-      <h2 className="section__title">About me</h2>
-      <span className="section__subtitle">My introduction</span>
-        
+      <div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200" >
+        <h2 className="section__title">About me</h2>
+        <span className="section__subtitle">My introduction</span>
+      </div>
+      
       <div className="about__container container grid">
-        <img src={AboutImg} alt="about-img" className="about__img" />
+        <img src={AboutImg} alt="about-img" className="about__img" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" />
 
-        <div className="about__data">
+        <div className="about__data" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="750" >
           <Info></Info>
 
           <p className="about__description">

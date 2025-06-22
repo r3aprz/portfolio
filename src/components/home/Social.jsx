@@ -21,11 +21,11 @@ const Social = () => {
             <i className="uil uil-telegram-alt"></i>
         </a>
 
-        {/* <a 
-          href="https://t.me/fdm182" 
+        <a 
+          href="https://www.instagram.com/fraachakra/" 
           className="home__social-icon" target='_blank'>
-            <i className="uil uil-instagram-alt"></i>
-        </a> */}
+            <i className="uil uil-instagram"></i>
+        </a>
 
     </div>
   )

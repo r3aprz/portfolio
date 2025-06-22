@@ -3,18 +3,14 @@ import emailjs from '@emailjs/browser';
 import './contact.css'
 import Sendicon from '../home/icons/Sendicon'
 import config from '../../../config.json'
-
-// Tick icon SVG component
-const TickIcon = () => (
-  <svg width="24" height="24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="20 6 10 18 4 12" />
-  </svg>
-);
+import TickIcon from './icons/TickIcon';
+import LoadingIcon from './icons/LoadingIcon';
 
 const Contact = () => {
 
     const form = useRef();
     const [sent, setSent] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({ name: false, email: false, project: false });
 
     const sendEmail = (e) => {
@@ -31,10 +27,11 @@ const Contact = () => {
         };
         setErrors(newErrors);
 
-        // Se almeno un campo è vuoto, non inviare
         if (newErrors.name || newErrors.email || newErrors.project) {
             return;
         }
+
+        setLoading(true);
 
         emailjs
         .sendForm(
@@ -45,31 +42,33 @@ const Contact = () => {
             }
         )
         .then(() => {
+            setLoading(false);
             setSent(true);
-            setTimeout(() => setSent(false), 2000); // Show tick for 2 seconds
+            setTimeout(() => setSent(false), 2000);
         })
         .catch(() => {
+            setLoading(false);
             // handle error if needed
         });
 
         setErrors({ name: false, email: false, project: false });
         e.target.reset();
     };
-
+    
   return (
     <>
         <section className="contact section" id="contact">
-            <div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200">
+            <div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="700">
                 <h2 className="section__title">Get in touch</h2>
                 <span className="section__subtitle">Contact me</span>
             </div>
 
             <div className="contact__container container grid">
-                <div className="contact__content">
-                    <h3 className="contact__title">Ask me something</h3>
+                <div className="contact__content" >
+                    <h3 className="contact__title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">Ask me something</h3>
 
-                    <div className="contact__info">
-                        <div className="contact__card">
+                    <div className="contact__info" >
+                        <div className="contact__card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
                             <i className="uil uil-at contact__card-icon"></i>
 
                             <h3 className="contact__card-title">Email</h3>
@@ -81,7 +80,7 @@ const Contact = () => {
                             </a>
                         </div>
 
-                        <div className="contact__card">
+                        <div className="contact__card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
                             <i className="uil uil-telegram-alt contact__card-icon"></i>
 
                             <h3 className="contact__card-title">Telegram</h3>
@@ -93,7 +92,7 @@ const Contact = () => {
                             </a>
                         </div>
 
-                        <div className="contact__card">
+                        <div className="contact__card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
                             <i className="uil uil-linkedin contact__card-icon"></i>
 
                             <h3 className="contact__card-title">Linkedin</h3>
@@ -107,7 +106,7 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className="contact__content">
+                <div className="contact__content" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1000">
                     <h3 className="contact__title">Weite me your projects</h3>
 
                     <form className="contact__form" ref={form} onSubmit={sendEmail} autoComplete="off">
@@ -143,12 +142,14 @@ const Contact = () => {
                             className={`button button--flex contact__send-btn${sent ? " sent" : ""}`}
                             type="submit"
                             style={{ position: "relative", overflow: "hidden", minWidth: 160, minHeight: 48 }}
+                            disabled={loading}
                         >
                             <span style={{ marginRight: 8 }}>
                                 Send message
                             </span>
-                            <span className={`icon-wrapper${sent ? " fade-out" : " fade-in"}`}>
-                                {!sent && <Sendicon />}
+                            <span className={`icon-wrapper${loading ? " fade-in" : sent ? " fade-out" : " fade-in"}`}>
+                                {loading && <LoadingIcon />}
+                                {!loading && !sent && <Sendicon />}
                             </span>
                             <span className={`icon-wrapper${sent ? " fade-in" : " fade-out"}`}>
                                 {sent && <TickIcon />}

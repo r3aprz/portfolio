@@ -23,7 +23,7 @@ const About = () => {
             Frontend and Backend developer. I have years of experience in creating responsive and fast web application.
           </p>
 
-          <a download="" href={CV} className="button button--flex">Download CV 
+          <a download href={CV} className="button button--flex download-cv-btn">Download CV 
             <Fileicon></Fileicon>
           </a>
         </div>

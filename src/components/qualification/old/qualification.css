@@ -72,69 +72,14 @@
     height: 13px;
     background-color: var(--title-color);
     border-radius: 50%;
-    position: relative;
 }
 
 .qualification__line {
     display: block;
     width: 1px;
     height: 100%;
-    background-color: var(--text-color);
-    transform: translate(6px, -7px) !important;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-.qualification__animated {
-  opacity: 0;
-  animation: fadeInUp 0.5s forwards;
-}
-.qualification__animated--reset {
-  opacity: 0 !important;
-  animation: none !important;
-}
-
-.qualification__line--last {
-  position: relative;
-  background-color: var(--text-color);
-  width: 1px;
-  height: 85%;
-  border: none;
-  transform: translate(6px, -7px) !important;
-  /* linea continua */
-}
-
-/* Pseudo-elemento per tratteggio e dissolvenza solo in fondo */
-.qualification__line--last::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -68%;
-  transform: translateX(-50%);
-  width: 1.5px;
-  height: 50px;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      var(--text-color) 0px,
-      var(--text-color) 6px,
-      transparent 6px,
-      transparent 12px
-    );
-  opacity: 0.8;
-  pointer-events: none;
-  z-index: 2;
-  border-radius: 2px;
-  /* dissolvenza finale */
-  mask-image: linear-gradient(to bottom, #000 10%, transparent 100%);
-}
-
-@keyframes fadeLine {
-  from { opacity: 0; }
-  to { opacity: 0.5; }
+    background-color: var(--title-color);
+    transform: translate(6px, -7px);
 }
 
 /* ============== BREAKPOINTS ============== */

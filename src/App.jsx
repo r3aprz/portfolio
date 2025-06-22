@@ -8,6 +8,7 @@ import About from './components/about/About';
 import Skills from './components/skills/Skills';
 import Services from './components/services/Services'
 import Qualification from './components/qualification/Qualification'
+import Contact from './components/contact/Contact'
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
         <Skills></Skills>
         <Services></Services>
         <Qualification></Qualification>
+        <Contact></Contact>
       </main>
     </>
   )

@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './header.css'
+
+const sections = ['home', 'about', 'skills', 'services', 'qualification', 'contact'];
 
 const Header = () => {
 
@@ -16,9 +18,32 @@ const Header = () => {
 
   /* ========== Toggle Menu ============= */
   const [toggle, showMenu] = useState(false);
-  const [activeNav, setActiveNav] = useState('#about');
+  const [activeNav, setActiveNav] = useState('#home');
   
   // const handleLinkClick = () => showMenu(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.pageYOffset;
+      let current = '#home';
+
+      sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+          const sectionTop = section.offsetTop - 80; // offset for header
+          const sectionHeight = section.offsetHeight;
+          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            current = `#${id}`;
+          }
+        }
+      });
+
+      setActiveNav(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header className="header">
@@ -47,9 +72,14 @@ const Header = () => {
                 <i className="uil uil-briefcase-alt nav__icon"></i> Services
               </a>
             </li>
-            <li className="nav__item">
+            {/* <li className="nav__item">
               <a href="#portfolio" onClick={() => {setActiveNav('#portfolio'); showMenu(false);}} className={activeNav === '#portfolio' ? "nav__link active-link" : "nav__link"} >
                 <i className="uil uil-scenery nav__icon"></i> Portfolio
+              </a>
+            </li> */}
+            <li className="nav__item">
+              <a href="#qualification" onClick={() => {setActiveNav('#qualification'); showMenu(false);}} className={activeNav === '#qualification' ? "nav__link active-link" : "nav__link"} >
+                <i className="uil uil-book-open nav__icon"></i> Qualification
               </a>
             </li>
             <li className="nav__item">

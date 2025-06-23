@@ -5,6 +5,7 @@ import Sendicon from '../home/icons/Sendicon'
 import config from '../../../config.json'
 import TickIcon from './icons/TickIcon';
 import LoadingIcon from './icons/LoadingIcon';
+import Card from './Card';
 
 const Contact = () => {
 
@@ -68,41 +69,9 @@ const Contact = () => {
                     <h3 className="contact__title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">Ask me something</h3>
 
                     <div className="contact__info" >
-                        <div className="contact__card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
-                            <i className="uil uil-at contact__card-icon"></i>
-
-                            <h3 className="contact__card-title">Email</h3>
-                            <span className="contact__card-data">francescode.01@gmail.com</span>
-
-                            <a href="mailto:francescode.01@gmail.com" className="contact__button">
-                                Write me
-                                <i className="uil uil-arrow-right contact__button-icon"></i>
-                            </a>
-                        </div>
-
-                        <div className="contact__card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
-                            <i className="uil uil-telegram-alt contact__card-icon"></i>
-
-                            <h3 className="contact__card-title">Telegram</h3>
-                            <span className="contact__card-data">t.me/fdm182</span>
-
-                            <a href="https://t.me/fdm182" className="contact__button">
-                                Write me
-                                <i className="uil uil-arrow-right contact__button-icon"></i>
-                            </a>
-                        </div>
-
-                        <div className="contact__card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
-                            <i className="uil uil-linkedin contact__card-icon"></i>
-
-                            <h3 className="contact__card-title">Linkedin</h3>
-                            <span className="contact__card-data">in/francesco-de-micco/</span>
-
-                            <a href="https://www.linkedin.com/in/francesco-de-micco-b55034210/" className="contact__button">
-                                Write me
-                                <i className="uil uil-arrow-right contact__button-icon"></i>
-                            </a>
-                        </div>
+                        <Card title="Email" card_data="francescode.01@gmail.com" link="mailto:francescode.01@gmail.com" icon="uil uil-at contact__card-icon"></Card>
+                        <Card title="Telegram" card_data="t.me/fdm182" link="https://t.me/fdm182" icon="uil uil-telegram-alt contact__card-icon"></Card>
+                        <Card title="Linkedin" card_data="in/francesco-de-micco/" link="https://www.linkedin.com/in/francesco-de-micco-b55034210/" icon="uil uil-linkedin contact__card-icon"></Card>
                     </div>
                 </div>
 

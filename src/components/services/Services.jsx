@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./services.css"
+import LiElement from './LiElement';
 
 const Services = () => {
   const [toggleState, setToggleState] = useState(0);
@@ -37,33 +38,10 @@ const Services = () => {
               </p>
 
               <ul className="services__modal-services grid">
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Custom, responsive websites that look great on all devices, from desktop to mobile.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    User-friendly interfaces designed with usability and accessibility in mind.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Performance-optimized front-ends using clean code and modern frameworks like React or Vue.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Pixel-perfect implementations based on Figma, Adobe XD, or Sketch design files.
-                  </p>
-                </li>
+                <LiElement info="Custom, responsive websites that look great on all devices, from desktop to mobile."></LiElement>
+                <LiElement info="User-friendly interfaces designed with usability and accessibility in mind."></LiElement>
+                <LiElement info="Performance-optimized front-ends using clean code and modern frameworks like React."></LiElement>
+                <LiElement info="Pixel-perfect implementations based on Figma, Adobe XD, or Sketch design files."></LiElement>
               </ul>
 
             </div>
@@ -91,33 +69,10 @@ const Services = () => {
               </p>
 
               <ul className="services__modal-services grid">
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Robust APIs and server-side logic built with Node.js, Express, or Flask.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Secure authentication systems and role-based access control for user management.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Integration with third-party services such as payment gateways, email, and cloud storage APIs.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Scalable back-end architectures ready to handle growth and increased traffic.
-                  </p>
-                </li>
+                <LiElement info="Robust APIs and server-side logic built with Node.js, Express, or Flask."></LiElement>
+                <LiElement info="Secure authentication systems and role-based access control for user management."></LiElement>
+                <LiElement info="Integration with third-party services such as payment gateways, email, and cloud storage APIs."></LiElement>
+                <LiElement info="Scalable back-end architectures ready to handle growth and increased traffic."></LiElement>
               </ul>
 
             </div>
@@ -145,33 +100,10 @@ const Services = () => {
               </p>
 
               <ul className="services__modal-services grid">
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Efficient database schema design tailored to the application’s data model.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Optimization of queries and indexing to boost performance and reduce load times.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Data migration and transformation from legacy systems or different platforms.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Backup strategies and data integrity checks to ensure long-term reliability.
-                  </p>
-                </li>
+                <LiElement info="Efficient database schema design tailored to the application’s data model."></LiElement>
+                <LiElement info="Optimization of queries and indexing to boost performance and reduce load times."></LiElement>
+                <LiElement info="Data migration and transformation from legacy systems or different platforms."></LiElement>
+                <LiElement info="Backup strategies and data integrity checks to ensure long-term reliability."></LiElement>
               </ul>
 
             </div>

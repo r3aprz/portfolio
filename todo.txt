@@ -2,9 +2,5 @@ npm run dev -- --host
 
 ngrok http --url=gelding-needed-equally.ngrok-free.app 5173
 
-standardizzare i componenti (caselle di about me, tab di service)
-fare tema scuro
-
-
 aggiungere progetti (all, web, app [rainPredRNN2, IRC chat, kopilot, terminal portfolio, ])
 aggiustare progetti github (pulizia + scrittura readme)

@@ -52,6 +52,18 @@
     box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.15);
 }
 
+.change-theme {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.change-theme:hover {
+    color: var(--title-color-dark);
+    transition: .3s;
+}
+
 /* ============== BREAKPOINTS ============== */
 /* for medium devices */
 @media screen and (max-width: 768px){
@@ -116,6 +128,17 @@
     .nav__toggle {
         display: block;
     }   
+
+    .change-theme {
+        position: absolute;
+        right: 0;
+        margin-right: 4rem;
+        transition: color 0.5s cubic-bezier(0.4,0,0.2,1), transform 0.4s;
+    }
+
+    .change-theme:active {
+        transition: fad(180deg) scale(1.2);
+    }
 }
 
 /* for small devices */

@@ -22,6 +22,30 @@ const Header = () => {
   
   // const handleLinkClick = () => showMenu(false);
 
+  /* ========== Dark mode ============= */
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved !== null) {
+      if (saved === 'dark') document.body.classList.add('dark-theme');
+      else document.body.classList.remove('dark-theme');
+      return saved === 'dark';
+    }
+    document.body.classList.add('dark-theme');
+    return true;
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [darkMode]);
+
+  const toggleTheme = () => setDarkMode(prev => !prev);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.pageYOffset;
@@ -92,6 +116,13 @@ const Header = () => {
           <i className="uil uil-times nav__close" onClick={() => showMenu(!toggle)}></i>
         </div>
 
+        <i 
+          className={`uil ${darkMode ? 'uil-sun' : 'uil-moon'} change-theme`} 
+          id="theme-button" 
+          onClick={toggleTheme}
+          style={{ cursor: 'pointer' }}
+        ></i>
+        
         <div className="nav__toggle" onClick={() => showMenu(!toggle)}>
           <i className="uil uil-apps"></i>
         </div>

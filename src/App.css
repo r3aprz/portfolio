@@ -10,6 +10,8 @@
   --title-color-dark: hsl(var(--hue), var(--sat), 0%);
   --text-color: hsl(var(--hue), var(--sat), 46%);
   --body-color: hsl(var(--hue), var(--sat), 98%);
+  --progress-bar-color: hsl(var(--hue), var(--sat), 80%);
+  --contact-form-error-bgcolor: #fff0f0;
   --container-color: #fff;
 
   /* font and typography */
@@ -162,6 +164,42 @@ img {
 .button--flex {
   display: inline-flex;
   align-items: center;
+}
+
+body,
+.header,
+.section,
+.container,
+.button,
+h1, h2, h3 {
+  transition: 
+    background-color 0.5s cubic-bezier(0.4,0,0.2,1),
+    color 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ============== dark mode =================*/
+body.dark-theme {
+  --hue: 0;
+  --sat: 0%;
+  --title-color: hsl(var(--hue), var(--sat), 98%);      
+  --title-color-dark: hsl(var(--hue), var(--sat), 80%); 
+  --text-color: hsl(var(--hue), var(--sat), 70%);       
+  --body-color: hsl(var(--hue), var(--sat), 12%);       
+  --container-color: hsl(var(--hue), var(--sat), 16%);  
+  --progress-bar-color: hsl(var(--hue), var(--sat), 40%);
+  /* --container-color: #353535; */
+  --contact-form-error-bgcolor: #2a2626;
+}
+
+body.no-theme-transition,
+body.no-theme-transition .header,
+body.no-theme-transition .section,
+body.no-theme-transition .container,
+body.no-theme-transition .button,
+body.no-theme-transition h1,
+body.no-theme-transition h2,
+body.no-theme-transition h3 {
+  transition: none !important;
 }
 
 /* ============== BREAKPOINTS ============== */

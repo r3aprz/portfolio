@@ -9,7 +9,7 @@ const LoadingIcon = () => {
               cy="25"
               r="20"
               fill="none"
-              stroke="white"
+              stroke="var(--progress-bar-color)"
               strokeWidth="5"
               strokeDasharray="31.4 31.4"
               strokeLinecap="round"

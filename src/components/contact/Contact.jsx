@@ -14,6 +14,13 @@ const Contact = () => {
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({ name: false, email: false, project: false });
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        if (errors[name] && value.trim() !== "") {
+            setErrors(prev => ({ ...prev, [name]: false }));
+        }
+    };
+
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -49,7 +56,6 @@ const Contact = () => {
         })
         .catch(() => {
             setLoading(false);
-            // handle error if needed
         });
 
         setErrors({ name: false, email: false, project: false });
@@ -76,7 +82,7 @@ const Contact = () => {
                 </div>
 
                 <div className="contact__content" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1000">
-                    <h3 className="contact__title">Weite me your projects</h3>
+                    <h3 className="contact__title">Write me your projects</h3>
 
                     <form className="contact__form" ref={form} onSubmit={sendEmail} autoComplete="off">
                         <div className={`contact__form-div${errors.name ? " contact__form-error" : ""}`}>
@@ -85,7 +91,9 @@ const Contact = () => {
                                 type="text"
                                 name='name'
                                 className='contact__form-input'
-                                placeholder='Insert your name' />
+                                placeholder='Insert your name' 
+                                 onChange={handleInputChange}
+                            />
                         </div>
 
                         <div className={`contact__form-div${errors.email ? " contact__form-error" : ""}`}>
@@ -94,7 +102,9 @@ const Contact = () => {
                                 type='email'
                                 name='email'
                                 className='contact__form-input'
-                                placeholder='Insert your email' />
+                                placeholder='Insert your email' 
+                                onChange={handleInputChange}
+                            />
                         </div>
 
                         <div className={`contact__form-div contact__form-area${errors.project ? " contact__form-error" : ""}`}>
@@ -104,7 +114,9 @@ const Contact = () => {
                                 cols={30}
                                 rows={10}
                                 className='contact__form-input'
-                                placeholder="Write you're project idea" />
+                                placeholder="Write you're project idea" 
+                                onChange={handleInputChange}
+                            />
                         </div>
 
                         <button

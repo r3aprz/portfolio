@@ -61,7 +61,7 @@
 }
 
 .skills__bar {
-    background-color: hsl(var(--hue), var(--sat), 80%);
+    background-color: var(--progress-bar-color);
     margin-top: 0.5rem;
     margin-left: 1.5rem;
 }

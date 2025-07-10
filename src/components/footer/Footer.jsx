@@ -13,7 +13,7 @@ const Footer = () => {
                 </li>
 
                 <li>
-                    <a href="#services" className="footer__link">Services</a>
+                    <a href="#skills" className="footer__link">Skills</a>
                 </li>
 
                 <li>

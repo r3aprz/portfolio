@@ -108,7 +108,7 @@
     .nav__close {
         position: absolute;
         right: 1.3rem;
-        bottom: .5rem;
+        bottom: .425rem;
         font-size: 1.5rem;
         cursor: pointer;
         color: var(--title-color);

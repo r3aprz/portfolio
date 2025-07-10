@@ -13,6 +13,7 @@
   --progress-bar-color: hsl(var(--hue), var(--sat), 80%);
   --contact-form-error-bgcolor: #fff0f0;
   --container-color: #fff;
+  --border-color: rgba(0, 0, 0, 0.15);
 
   /* font and typography */
   --body-font: 'Poppins', sans-serif;

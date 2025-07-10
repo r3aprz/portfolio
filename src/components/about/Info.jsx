@@ -4,9 +4,9 @@ import Box from './Box'
 const Info = () => {
   return (
     <div className="about__info grid">
-        <Box title="Experience" subtitle="2 + years" icon="bx bxs-medal-star-alt about__icon"></Box>
-        <Box title="Completed" subtitle="15 + project" icon="bx bx-briefcase-alt about__icon"></Box>
-        <Box title="Support" subtitle="Online 24/7" icon="bx bx-headphone-mic about__icon"></Box>
+        <Box title="Frontend" subtitle="Clean & elegant UX" icon="uil uil-web-grid about__icon"></Box>
+        <Box title="Backend" subtitle="High-speed logic" icon="uil uil-setting about__icon"></Box>
+        <Box title="Database" subtitle="Optimized storage" icon="uil uil-database about__icon"></Box>
     </div>
   )
 }

@@ -2,5 +2,6 @@ npm run dev -- --host
 
 ngrok http --url=gelding-needed-equally.ngrok-free.app 5173
 
-aggiungere progetti (all, web, app [rainPredRNN2, IRC chat, kopilot, terminal portfolio, ])
-aggiustare progetti github (pulizia + scrittura readme)
+aggiungere progetti (all, web, app [rainPredRNN2, IRC chat, kopilot, terminal portfolio, ])-
+
+aggiungere carosello dei linguaggi e framework stile codegrind

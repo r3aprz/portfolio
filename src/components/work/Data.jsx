@@ -2,7 +2,7 @@ import Work1 from '../../assets/work1.jpg';
 import Kopilot from '../../assets/kopilot.svg';
 import Nowcast from '../../assets/nowcast.png';
 import IRC from '../../assets/IRC.png';
-import TerminalPortfolio from '../../assets/terminalPortfolio.png';
+import TerminalPortfolio from '../../assets/terminalPortfolio.PNG';
 import VoxelEngine from '../../assets/VoxelEngine.png';
 import Portfolio from '../../assets/portfolio.PNG';
 

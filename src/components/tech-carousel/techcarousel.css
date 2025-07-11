@@ -1,0 +1,239 @@
+.tech-carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 6rem 6rem 3rem 6rem;
+  position: relative;
+  background: transparent;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+/* Effetto fade ai lati con custom properties */
+.carousel-container::before,
+.carousel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  transition: background 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(
+    to right, 
+    var(--carousel-fade-color) 0%,
+    var(--carousel-fade-color) 20%,
+    var(--carousel-fade-semi) 40%,
+    var(--carousel-fade-light) 70%,
+    transparent 100%
+  );
+}
+
+.carousel-container::after {
+  right: 0;
+  background: linear-gradient(
+    to left, 
+    var(--carousel-fade-color) 0%,
+    var(--carousel-fade-color) 20%,
+    var(--carousel-fade-semi) 40%,
+    var(--carousel-fade-light) 70%,
+    transparent 100%
+  );
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(130px * 21 * 2); /* 21 icone, 130px ognuna (100px + 30px gap), duplicate */
+  animation: scroll 80s linear infinite;
+  gap: 30px;
+  align-items: center;
+  height: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-130px * 21)); /* Muove esattamente di una lunghezza del set originale */
+  }
+}
+
+.tech-icon {
+  flex: 0 0 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-component {
+  font-size: 4rem;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover .icon-component {
+  filter: grayscale(0%);
+}
+
+.tech-name {
+  display: none;
+}
+
+/* Colori specifici per ogni tecnologia */
+.tech-icon.html:hover .icon-component {
+  color: #e34f26;
+}
+
+.tech-icon.css:hover .icon-component {
+  color: #1572b6;
+}
+
+.tech-icon.js:hover .icon-component {
+  color: #f7df1e;
+}
+
+.tech-icon.react:hover .icon-component {
+  color: #61dafb;
+}
+
+.tech-icon.node:hover .icon-component {
+  color: #339933;
+}
+
+.tech-icon.python:hover .icon-component {
+  color: #3776ab;
+}
+
+.tech-icon.java:hover .icon-component {
+  color: #007396;
+}
+
+.tech-icon.cpp:hover .icon-component {
+  color: #00599c;
+}
+
+.tech-icon.git:hover .icon-component {
+  color: #f05032;
+}
+
+.tech-icon.docker:hover .icon-component {
+  color: #2496ed;
+}
+
+.tech-icon.mongo:hover .icon-component {
+  color: #47a248;
+}
+
+.tech-icon.mysql:hover .icon-component {
+  color: #4479a1;
+}
+
+.tech-icon.linux:hover .icon-component {
+  color: #fcc624;
+}
+
+.tech-icon.aws:hover .icon-component {
+  color: #ff9900;
+}
+
+.tech-icon.ts:hover .icon-component {
+  color: #3178c6;
+}
+
+.tech-icon.vue:hover .icon-component {
+  color: #4fc08d;
+}
+
+.tech-icon.nextjs:hover .icon-component {
+  color: #000000;
+}
+
+.tech-icon.tailwind:hover .icon-component {
+  color: #06b6d4;
+}
+
+.tech-icon.postgres:hover .icon-component {
+  color: #336791;
+}
+
+.tech-icon.redis:hover .icon-component {
+  color: #dc382d;
+}
+
+.tech-icon.graphql:hover .icon-component {
+  color: #e10098;
+}
+
+.tech-icon.kubernetes:hover .icon-component {
+  color: #326ce5;
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .tech-carousel {
+    padding: 6rem 4rem 6rem 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tech-carousel {
+    padding: 4rem 1rem 0rem 1rem;
+  }
+  .tech-icon {
+    flex: 0 0 80px;
+    height: 80px;
+  }
+  
+  .icon-component {
+    font-size: 3rem;
+  }
+  
+  .carousel-track {
+    width: calc(95px * 21 * 2); /* 21 icone, 95px ognuna (80px + 15px gap), duplicate */
+    gap: 15px;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-95px * 21)); /* Muove esattamente di una lunghezza del set originale */
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carousel-container::before,
+  .carousel-container::after {
+    width: 50px;
+  }
+  
+  .tech-icon {
+    flex: 0 0 70px;
+    height: 70px;
+  }
+  
+  .icon-component {
+    font-size: 2.5rem;
+  }
+}
+
+/* Gestione no-transition per pseudo-elementi */
+body.no-theme-transition .carousel-container::before,
+body.no-theme-transition .carousel-container::after {
+  transition: none !important;
+}

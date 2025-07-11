@@ -1,6 +1,8 @@
 import React from 'react'
 import './work.css'
 import Works from './Works'
+import TechCarousel from '../tech-carousel/TechCarousel'
+
 
 const Work = () => {
   return (
@@ -12,6 +14,8 @@ const Work = () => {
         </div>
 
         <Works></Works>
+
+        <TechCarousel />
       </section>
     </>
   )

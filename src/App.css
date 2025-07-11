@@ -14,6 +14,11 @@
   --contact-form-error-bgcolor: #fff0f0;
   --container-color: #fff;
   --border-color: rgba(0, 0, 0, 0.15);
+  
+  /* carousel fade colors */
+  --carousel-fade-color: hsl(var(--hue), var(--sat), 98%);
+  --carousel-fade-semi: hsla(var(--hue), var(--sat), 98%, 0.8);
+  --carousel-fade-light: hsla(var(--hue), var(--sat), 98%, 0.4);
 
   /* font and typography */
   --body-font: 'Poppins', sans-serif;
@@ -173,6 +178,7 @@ body,
 .container,
 .button,
 .footer,
+.tech-carousel,
 h1, h2, h3 {
   transition: 
     background-color 0.5s cubic-bezier(0.4,0,0.2,1),
@@ -191,6 +197,11 @@ body.dark-theme {
   --progress-bar-color: hsl(var(--hue), var(--sat), 40%);
   /* --container-color: #353535; */
   --contact-form-error-bgcolor: #2a2626;
+  
+  /* carousel fade colors for dark theme */
+  --carousel-fade-color: hsl(var(--hue), var(--sat), 12%);
+  --carousel-fade-semi: hsla(var(--hue), var(--sat), 12%, 0.8);
+  --carousel-fade-light: hsla(var(--hue), var(--sat), 12%, 0.4);
 }
 
 body.no-theme-transition,
@@ -198,6 +209,7 @@ body.no-theme-transition .header,
 body.no-theme-transition .section,
 body.no-theme-transition .container,
 body.no-theme-transition .button,
+body.no-theme-transition .tech-carousel,
 body.no-theme-transition h1,
 body.no-theme-transition h2,
 body.no-theme-transition h3 {

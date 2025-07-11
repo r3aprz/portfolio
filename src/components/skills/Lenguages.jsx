@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 const skills = [
-  { name: "C", percent: 80, className: "skills__c" },
-  { name: "C++", percent: 85, className: "skills__cpp" },
-  { name: "C#", percent: 80, className: "skills__csharp" },
+  { name: "C, C++, C#", percent: 80, className: "skills__c" },
   { name: "Java", percent: 80, className: "skills__java" },
   { name: "Python", percent: 85, className: "skills__python" },
+  { name: "PHP", percent: 85, className: "skills__cpp" },
   { name: "HTML, CSS, JS", percent: 90, className: "skills__html_css_js" },
-  { name: "SQL", percent: 85, className: "skills__cpp" },
+  { name: "SQL, mySQL, mardiaDB", percent: 85, className: "skills__cpp" },
+  { name: "React, Tailwind, Vitejs", percent: 80, className: "skills__csharp" },
   { name: "Other Frameworks", percent: 80, className: "skills__other_framework" },
 ];
 

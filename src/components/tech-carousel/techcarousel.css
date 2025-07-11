@@ -1,7 +1,7 @@
 .tech-carousel {
   width: 100%;
   overflow: hidden;
-  padding: 6rem 6rem 3rem 6rem;
+  padding: 6rem 6rem 0rem 6rem;
   position: relative;
   background: transparent;
 }
@@ -52,7 +52,7 @@
 
 .carousel-track {
   display: flex;
-  width: calc(130px * 21 * 2); /* 21 icone, 130px ognuna (100px + 30px gap), duplicate */
+  width: calc(130px * 33 * 2); /* 33 icone, 130px ognuna (100px + 30px gap), duplicate */
   animation: scroll 80s linear infinite;
   gap: 30px;
   align-items: center;
@@ -64,7 +64,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-130px * 21)); /* Muove esattamente di una lunghezza del set originale */
+    transform: translateX(calc(-130px * 33)); /* Muove esattamente di una lunghezza del set originale */
   }
 }
 
@@ -84,7 +84,15 @@
   transition: all 0.3s ease;
 }
 
-.tech-icon:hover .icon-component {
+/* Stile specifico per le icone DevIcon CDN */
+.tech-icon i.icon-component {
+  font-size: 4rem;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover .icon-component,
+.tech-icon:hover i.icon-component {
   filter: grayscale(0%);
 }
 
@@ -93,92 +101,137 @@
 }
 
 /* Colori specifici per ogni tecnologia */
-.tech-icon.html:hover .icon-component {
-  color: #e34f26;
+.tech-icon.apache:hover .icon-component {
+  color: #d22128;
 }
 
-.tech-icon.css:hover .icon-component {
-  color: #1572b6;
+.tech-icon.apple:hover .icon-component {
+  color: #a6a6a6;
 }
 
-.tech-icon.js:hover .icon-component {
-  color: #f7df1e;
+.tech-icon.arduino:hover .icon-component {
+  color: #00979d;
 }
 
-.tech-icon.react:hover .icon-component {
-  color: #61dafb;
+.tech-icon.bootstrap:hover .icon-component {
+  color: #7952b3;
 }
 
-.tech-icon.node:hover .icon-component {
-  color: #339933;
-}
-
-.tech-icon.python:hover .icon-component {
-  color: #3776ab;
-}
-
-.tech-icon.java:hover .icon-component {
-  color: #007396;
+.tech-icon.c:hover .icon-component {
+  color: #456488;
 }
 
 .tech-icon.cpp:hover .icon-component {
   color: #00599c;
 }
 
+.tech-icon.csharp:hover .icon-component {
+  color: #512bd4;
+}
+
+
+.tech-icon.css:hover .icon-component {
+  color: #1572b6;
+}
+
+.tech-icon.debian:hover .icon-component {
+  color: #a81d33;
+}
+
+.tech-icon.flask:hover .icon-component {
+  color: #000000;
+}
+
 .tech-icon.git:hover .icon-component {
   color: #f05032;
 }
 
-.tech-icon.docker:hover .icon-component {
-  color: #2496ed;
+.tech-icon.github:hover .icon-component {
+  color: #181717;
 }
 
-.tech-icon.mongo:hover .icon-component {
-  color: #47a248;
+.tech-icon.html:hover .icon-component {
+  color: #e34f26;
 }
 
-.tech-icon.mysql:hover .icon-component {
-  color: #4479a1;
+.tech-icon.java:hover .icon-component {
+  color: #007396;
+}
+
+.tech-icon.js:hover .icon-component {
+  color: #f7df1e;
+}
+
+.tech-icon.jquery:hover .icon-component {
+  color: #0769ad;
 }
 
 .tech-icon.linux:hover .icon-component {
   color: #fcc624;
 }
 
-.tech-icon.aws:hover .icon-component {
-  color: #ff9900;
+.tech-icon.mariadb:hover .icon-component {
+  color: #003545;
 }
 
-.tech-icon.ts:hover .icon-component {
-  color: #3178c6;
+.tech-icon.mysql:hover .icon-component {
+  color: #4479a1;
 }
 
-.tech-icon.vue:hover .icon-component {
-  color: #4fc08d;
+.tech-icon.dotnet:hover .icon-component {
+  color: #512bd4;
 }
 
-.tech-icon.nextjs:hover .icon-component {
-  color: #000000;
+.tech-icon.node:hover .icon-component {
+  color: #339933;
+}
+
+.tech-icon.npm:hover .icon-component {
+  color: #cb3837;
+}
+
+.tech-icon.php:hover .icon-component {
+  color: #777bb4;
+}
+
+.tech-icon.python:hover .icon-component {
+  color: #3776ab;
+}
+
+.tech-icon.raspberrypi:hover .icon-component {
+  color: #a22846;
+}
+
+.tech-icon.react:hover .icon-component {
+  color: #61dafb;
+}
+
+.tech-icon.sqlite:hover .icon-component {
+  color: #003b57;
 }
 
 .tech-icon.tailwind:hover .icon-component {
   color: #06b6d4;
 }
 
-.tech-icon.postgres:hover .icon-component {
-  color: #336791;
+.tech-icon.ts:hover .icon-component {
+  color: #3178c6;
 }
 
-.tech-icon.redis:hover .icon-component {
-  color: #dc382d;
+.tech-icon.terminal:hover .icon-component {
+  color: #2e3436;
 }
 
-.tech-icon.graphql:hover .icon-component {
-  color: #e10098;
+.tech-icon.ubuntu:hover .icon-component {
+  color: #e95420;
 }
 
-.tech-icon.kubernetes:hover .icon-component {
-  color: #326ce5;
+.tech-icon.vitejs:hover .icon-component {
+  color: #646cff;
+}
+
+.tech-icon.windows:hover .icon-component {
+  color: #0078d4;
 }
 
 /* Responsive */
@@ -197,12 +250,13 @@
     height: 80px;
   }
   
-  .icon-component {
+  .icon-component,
+  .tech-icon i.icon-component {
     font-size: 3rem;
   }
   
   .carousel-track {
-    width: calc(95px * 21 * 2); /* 21 icone, 95px ognuna (80px + 15px gap), duplicate */
+    width: calc(95px * 33 * 2); /* 33 icone, 95px ognuna (80px + 15px gap), duplicate */
     gap: 15px;
   }
   
@@ -211,7 +265,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-95px * 21)); /* Muove esattamente di una lunghezza del set originale */
+      transform: translateX(calc(-95px * 33)); /* Muove esattamente di una lunghezza del set originale */
     }
   }
 }
@@ -227,7 +281,8 @@
     height: 70px;
   }
   
-  .icon-component {
+  .icon-component,
+  .tech-icon i.icon-component {
     font-size: 2.5rem;
   }
 }
